@@ -1,0 +1,4 @@
+/* Ici, tu peux personnaliser les styles de ton jeu */
+canvas {
+    border: 1px solid black;
+}
