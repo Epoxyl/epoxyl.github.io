@@ -1,10 +1,4 @@
-let password;
-do {
-  password = prompt("Entrez le mot de passe : ");
-} while (password !== 'votre_mot_de_passe');
 
-// Si on arrive ici, le mot de passe est correct
-alert('Mot de passe correct ! Le jeu va commencer.');
 
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
