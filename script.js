@@ -98,44 +98,53 @@ const ending = () => {
 const Here = {
     change: 0,
     changeLocation: function(button) {
-        switch (this.change) {
-            case 0:
-                button.style.float = "right";
-                break;
-            case 4:
-                console.log("here");
-                document.getElementById("lines").style.display = "block";
-                break;
-            case 8:
-                button.style.float = "none";
-                break;
-            case 9:
-                button.style.display = "none";
-                setTimeout(function() {
-                    button.style.display = "block";
-                }, 4000);
-                break;
-            case 10:
-                button.style.fontSize = "1000px";
-                break;
-            case 13:
-                button.style.fontSize = "2px";
-                button.style.float = "left";
-                break;
-            case 14:
-                button.style.fontSize = "24px";
-                break;
-            case 24:
-                window.open("https://youtu.be/KJYyaUZcJpg?t=220");
-                break;
-            case 40:
-              document.getElementById("button_div").style.display = "none";
-              document.getElementById("image_cachee").style.display = "block";
-              return;
-        }
-        button.innerText = "GG (" + (40 - this.change - 1) + ")";
-        console.log(this.change);
-        this.change += 1;
+      const buttonDiv = document.getElementById("button_div");
+    
+      switch (this.change) {
+        case 0:
+          // Remove float and use justify-content: flex-end for right alignment
+          buttonDiv.style.float = "none";
+          buttonDiv.style.justifyContent = "flex-end";
+          break;
+        case 4:
+          console.log("here");
+          document.getElementById("lines").style.display = "block";
+          break;
+        case 8:
+          // No need to set float to none here, it's already handled in case 0
+          break;
+        case 9:
+          button.style.display = "none";
+          setTimeout(() => {
+            button.style.display = "block";
+          }, 4000);
+          break;
+        case 10:
+          button.style.fontSize = "1000px";
+          break;
+        case 13:
+          button.style.fontSize = "2px";
+          // Use justify-content: flex-start for left alignment
+          buttonDiv.style.justifyContent = "flex-start";
+          break;
+        case 14:
+          button.style.fontSize = "24px";
+          break;
+        case 24:
+          window.open("https://youtu.be/KJYyaUZcJpg?t=220");
+          break;
+        case 40:
+          buttonDiv.style.display = "none";
+          document.getElementById("image_cachee").style.display = "block";
+          return;
+        default:
+          // Handle unexpected cases (optional)
+          console.warn("Unhandled change value:", this.change);
+      }
+    
+      button.innerText = "GG (" + (40 - this.change - 1) + ")";
+      console.log(this.change);
+      this.change += 1;
     }
 }
 
