@@ -92,7 +92,7 @@ const initGame = () => {
 const ending = () => {
   clearInterval(setIntervalId);
   document.getElementById("game").remove();
-  document.getElementById("button").style.display = "block";  
+  document.getElementById("button_div").style.display = "block";  
 }
 
 const Here = {
@@ -129,7 +129,7 @@ const Here = {
                 window.open("https://youtu.be/KJYyaUZcJpg?t=220");
                 break;
             case 40:
-              document.getElementById("button").style.display = "none";
+              document.getElementById("button_div").style.display = "none";
               document.getElementById("image_cachee").style.display = "block";
               return;
         }
