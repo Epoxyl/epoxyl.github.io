@@ -95,7 +95,7 @@ const ending = () => {
 }
 
 let change = 0;
-changeLocation: function(button) {
+changeLocation = (button) => {
     switch (this.change) {
         case 0:
             button.style.float = "right";
