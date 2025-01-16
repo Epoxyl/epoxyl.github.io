@@ -92,7 +92,7 @@ const initGame = () => {
 const ending = () => {
   clearInterval(setIntervalId);
   document.getElementById("game").remove();
-  document.getElementById("button").style.display = "none";  
+  document.getElementById("button").style.display = "block";  
 }
 
 const Here = {
