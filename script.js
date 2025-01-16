@@ -90,7 +90,7 @@ const initGame = () => {
 }
 
 const ending = () => {
-  document.getElementById("wrapper").remove();
+  document.getElementById("game").remove();
   document.getElementById("button").style.display = "none";  
 }
 
