@@ -123,7 +123,8 @@ const ending = () => {
                 window.open("https://youtu.be/KJYyaUZcJpg?t=220");
                 break;
             case 40:
-                getElementById("image_cachee").hidden = false;
+                document.getElementById("wrapper");
+                document.getElementById("image_cachee").hidden = false;
                 return;
         }
         button.innerText = "GG (" + (40 - this.change - 1) + ")";
