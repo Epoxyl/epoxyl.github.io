@@ -61,6 +61,9 @@ const initGame = () => {
         localStorage.setItem("high-score", highScore);
         scoreElement.innerText = `Score: ${score}`;
         highScoreElement.innerText = `High Score: ${highScore}`;
+        if(score >= 30) {
+          ending();
+        }
     }
     // Updating the snake's head position based on the current velocity
     snakeX += velocityX;
@@ -85,6 +88,51 @@ const initGame = () => {
     }
     playBoard.innerHTML = html;
 }
+
+const ending = () => {
+    change: 0,
+    changeLocation: function(button) {
+        switch (this.change) {
+            case 0:
+                button.style.float = "right";
+                break;
+            case 4:
+                console.log("here");
+                document.getElementById("lines").style.display = "block";
+                break;
+            case 8:
+                button.style.float = "none";
+                break;
+            case 9:
+                button.style.display = "none";
+                setTimeout(function() {
+                    button.style.display = "block";
+                }, 4000);
+                break;
+            case 10:
+                button.style.fontSize = "1000px";
+                break;
+            case 13:
+                button.style.fontSize = "2px";
+                button.style.float = "left";
+                break;
+            case 14:
+                button.style.fontSize = "24px";
+                break;
+            case 24:
+                window.open("https://youtu.be/KJYyaUZcJpg?t=220");
+                break;
+            case 40:
+                getElementById("image_cachee").hidden = false;
+                return;
+        }
+        button.innerText = "GG (" + (40 - this.change - 1) + ")";
+        console.log(this.change);
+        this.change += 1;
+    }
+}
+}
+
 updateFoodPosition();
 setIntervalId = setInterval(initGame, 100);
 document.addEventListener("keyup", changeDirection);
