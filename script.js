@@ -1,7 +1,7 @@
 let password;
 do {
   password = prompt("Entrez le mot de passe : ");
-} while (password !== '15643297');
+} while (password !== 'AST3R15M');
 
 // Si on arrive ici, le mot de passe est correct
 alert('Mot de passe correct ! Le jeu va commencer.');
@@ -90,48 +90,50 @@ const initGame = () => {
 }
 
 const ending = () => {
-    change: 0,
-    changeLocation: function(button) {
-        switch (this.change) {
-            case 0:
-                button.style.float = "right";
-                break;
-            case 4:
-                console.log("here");
-                document.getElementById("lines").style.display = "block";
-                break;
-            case 8:
-                button.style.float = "none";
-                break;
-            case 9:
-                button.style.display = "none";
-                setTimeout(function() {
-                    button.style.display = "block";
-                }, 4000);
-                break;
-            case 10:
-                button.style.fontSize = "1000px";
-                break;
-            case 13:
-                button.style.fontSize = "2px";
-                button.style.float = "left";
-                break;
-            case 14:
-                button.style.fontSize = "24px";
-                break;
-            case 24:
-                window.open("https://youtu.be/KJYyaUZcJpg?t=220");
-                break;
-            case 40:
-                document.getElementById("wrapper");
-                document.getElementById("image_cachee").hidden = false;
-                return;
-        }
-        button.innerText = "GG (" + (40 - this.change - 1) + ")";
-        console.log(this.change);
-        this.change += 1;
-    }
+  document.getElementById("wrapper").remove();
+  document.getElementById("button").hidden = false;  
 }
+
+let change = 0;
+changeLocation: function(button) {
+    switch (this.change) {
+        case 0:
+            button.style.float = "right";
+            break;
+        case 4:
+            console.log("here");
+            document.getElementById("lines").style.display = "block";
+            break;
+        case 8:
+            button.style.float = "none";
+            break;
+        case 9:
+            button.style.display = "none";
+            setTimeout(function() {
+                button.style.display = "block";
+            }, 4000);
+            break;
+        case 10:
+            button.style.fontSize = "1000px";
+            break;
+        case 13:
+            button.style.fontSize = "2px";
+            button.style.float = "left";
+            break;
+        case 14:
+            button.style.fontSize = "24px";
+            break;
+        case 24:
+            window.open("https://youtu.be/KJYyaUZcJpg?t=220");
+            break;
+        case 40:
+            document.getElementById("button").hidden = false;
+            document.getElementById("image_cachee").hidden = false;
+            return;
+    }
+    button.innerText = "GG (" + (40 - this.change - 1) + ")";
+    console.log(this.change);
+    this.change += 1;
 }
 
 updateFoodPosition();
