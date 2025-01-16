@@ -105,13 +105,14 @@ const Here = {
           // Remove float and use justify-content: flex-end for right alignment
           buttonDiv.style.float = "none";
           buttonDiv.style.justifyContent = "flex-end";
+          button.style.float = "right"; 
           break;
         case 4:
           console.log("here");
           document.getElementById("lines").style.display = "block";
           break;
         case 8:
-          // No need to set float to none here, it's already handled in case 0
+          button.style.float = "none"; 
           break;
         case 9:
           button.style.display = "none";
@@ -142,7 +143,7 @@ const Here = {
           console.warn("Unhandled change value:", this.change);
       }
     
-      button.innerText = "GG (" + (40 - this.change - 1) + ")";
+      button.innerText = "Fin ? (" + (40 - this.change - 1) + ")";
       console.log(this.change);
       this.change += 1;
     }
