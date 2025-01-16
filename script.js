@@ -18,7 +18,7 @@ let snakeBody = [];
 let setIntervalId;
 let score = 0;
 // Getting high score from the local storage
-let highScore = localStorage.getItem("high-score") || 0;
+let highScore = 39;
 highScoreElement.innerText = `High Score: ${highScore}`;
 const updateFoodPosition = () => {
     // Passing a random 1 - 30 value as food position
@@ -91,7 +91,7 @@ const initGame = () => {
 
 const ending = () => {
   document.getElementById("wrapper").remove();
-  document.getElementById("button").hidden = false;  
+  document.getElementById("button").style.display = "none";  
 }
 
 const Here = {
@@ -128,8 +128,8 @@ const Here = {
                 window.open("https://youtu.be/KJYyaUZcJpg?t=220");
                 break;
             case 40:
-              document.getElementById("button").hidden = false;
-              document.getElementById("image_cachee").hidden = false;
+              document.getElementById("button").style.display = "none";
+              document.getElementById("image_cachee").style.display = "block";
               return;
         }
         button.innerText = "GG (" + (40 - this.change - 1) + ")";
